@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Document {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'temp/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'temp/css/navbar.css' %}">
+    {% block extra_css %} {% endblock %}
+</head>
+<body>
+    {% include 'temp/navbar.html' %}
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        <p>&copy; 2024 Temp App. All rights reserved.</p>
+    </footer>
+</body>
+</html>

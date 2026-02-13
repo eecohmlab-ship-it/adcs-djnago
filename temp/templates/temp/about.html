@@ -1,0 +1,18 @@
+{% extends 'temp/index.html' %}
+
+{% load static %}
+
+{% block title %} About Page {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'temp/css/about.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="about-container">
+    <h1> About us </h1>
+    <p>We are a dedicated team providing educational solution</p>
+    <p> Our mission is to simplify student managment.</p>
+</div>
+{% endblock %}
