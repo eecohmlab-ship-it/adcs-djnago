@@ -5,7 +5,8 @@ class Student(models.Model):
     COURSE_CHOICES = [
         ('cs', 'Computer Science'),
         ('bs', 'Business Studies'),
-        ('hm', 'Hotel Management')
+        ('hm', 'Hotel Management'),
+        ('dhm', 'Diploma in Hotel Management')
     ]
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)

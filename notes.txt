@@ -1,0 +1,6 @@
+What is a Django Form>?
+A Django form is a python class that:
+- Defines form fields
+- handles user inputs securly
+- Processes user input securly
+- Render html form elements automatically
