@@ -1,0 +1,63 @@
+{% extends 'temp/index.html' %}
+{% load static %}
+
+{% block title %}Delete Student - Temp App{% endblock %}
+
+{% block extra_css %}
+<style>
+    .delete-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background: white;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .delete-container h1 {
+        color: #d9534f;
+    }
+
+    .actions {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .btn-confirm {
+        background-color: #d9534f;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .btn-cancel {
+        background-color: #ccc;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="delete-container">
+    <h1>Delete Student?</h1>
+    <p>Are you sure you want to delete <strong>{{ student.name }}</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="actions">
+            <button type="submit" class="btn-confirm">Yes, Delete</button>
+            <a href="{% url 'student_list' %}" class="btn-cancel">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

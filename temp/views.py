@@ -39,8 +39,9 @@ def student_update(request, pk):
         form = StudentForm(instance=student)
     return render(request, 'temp/student_entry.html', {'form': form, 'title': 'Update Form'})
 
-
-
-
 def student_delete(request, pk):
-    pass
+    student = get_object_or_404(Student, pk=pk)
+    if request.method == "POST":
+        student.delete()
+        return redirect('student_list')
+    return render(request, 'temp/student_confirm_delete.html', {'student': student})
